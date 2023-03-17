@@ -10,11 +10,13 @@
   <ItemGroup>
     <None Remove="Pages\formula.png" />
     <None Remove="Pages\formula3.png" />
+    <None Remove="Task.bmp" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Pages\formula.png" />
     <Resource Include="Pages\formula3.png" />
+    <Resource Include="Task.bmp" />
   </ItemGroup>
 
   <ItemGroup>

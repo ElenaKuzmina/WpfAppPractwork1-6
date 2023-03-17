@@ -35,7 +35,8 @@
             <ListBox 
                  Name="LstArrayNew"/>
         </StackPanel>
-        
-        
+
+        <Image Grid.Row="2"
+               Source="..\Task.bmp" Stretch="Fill"/>
     </Grid>
 </Page>
