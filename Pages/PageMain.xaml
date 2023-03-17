@@ -27,6 +27,10 @@
                     Content="Пр.работа№6"
                      Style="{StaticResource StyleMenuButton}"
                     Click="BtnPW6_Click"/>
+            <Button Name="BtnPW7"
+                    Content="Пр.работа№7"
+                     Style="{StaticResource StyleMenuButton}"
+                    Click="BtnPW7_Click"/>
         </StackPanel>
     </Grid>
 </Page>
