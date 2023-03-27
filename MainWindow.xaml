@@ -34,6 +34,9 @@
                        Height="30"
                        FontSize="20"
                        Margin="5"/>
+            <Button Width="100" Height="30" 
+                    Content="Авторизация" 
+                    Click="Login_Click" />
         </StackPanel>
         <Frame Grid.Row="1"
                Name="FrmMain"
