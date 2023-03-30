@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,9 +30,10 @@ namespace WpfAppPractwork1.Pages
        
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.DefaultExt = "*.psw";
-            ofd.InitialDirectory = "D:\\";
+            OpenFileDialog ofd = new OpenFileDialog(); //диалог.окно открытия файла
+            //ofd.DefaultExt = "*.psw";
+            ofd.Filter = "(*.txt)|*.txt";
+            ofd.InitialDirectory = "H:\\";
            if  (ofd.ShowDialog() == false)
                 return;
                
@@ -39,12 +41,41 @@ namespace WpfAppPractwork1.Pages
             string filename = ofd.FileName;
             // читаем файл в строку
             string fileText = System.IO.File.ReadAllText(filename);
-            
-            MessageBox.Show($"Файл {filename} открыт. Пароль: {fileText}");
+
+            LstText.Items.Add($"Содержимое файла {filename}");
+            LstText.Items.Add($"{fileText}");
 
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "(*.txt)|*.txt";
+            //sfd.InitialDirectory = ;
+            if (sfd.ShowDialog() == false)
+            {
+                return;
+            }
+            string fileName = sfd.FileName;
+            string content = LstText.SelectedValue.ToString();
+            System.IO.File.WriteAllText(fileName, $"МДК01.01 Диалоговые окна {content}");
+
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+                printDialog.PrintVisual(PageDlg, "Печать из списка");
+
+        }
+
+        private void btnFont_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnColor_Click(object sender, RoutedEventArgs e)
         {
 
         }

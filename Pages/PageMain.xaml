@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WpfAppPractwork1.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Главная страница">
+      Title="Главная страница"
+      >
 
     <Grid>
         <StackPanel Orientation="Vertical"
