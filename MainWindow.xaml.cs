@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,28 @@ namespace WpfAppPractwork1
         public MainWindow()
         {
             InitializeComponent();
-            ClassFrame.frmObj = FrmMain;
-            ClassFrame.frmObj.Navigate(new PageMain());
+            
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            WindowPassword passwordWindow = new WindowPassword();
+
+            if (passwordWindow.ShowDialog() == true)
+            {
+                if (passwordWindow.Password == "111")
+                {
+                    MessageBox.Show("Авторизация пройдена");
+                    ClassFrame.frmObj = FrmMain;
+                    ClassFrame.frmObj.Navigate(new PageMain());
+                }
+                else
+                    MessageBox.Show("Неверный пароль");
+            }
+            else
+            {
+                MessageBox.Show("Авторизация не пройдена");
+            }
         }
     }
 }

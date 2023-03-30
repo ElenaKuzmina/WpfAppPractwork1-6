@@ -49,5 +49,10 @@ namespace WpfAppPractwork1.Pages
         {
             ClassFrame.frmObj.Navigate(new PagePW7());
         }
+
+        private void BtnDialog_Click(object sender, RoutedEventArgs e)
+        {
+            ClassFrame.frmObj.Navigate(new PageDialog());
+        }
     }
 }
